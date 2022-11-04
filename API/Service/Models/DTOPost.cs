@@ -1,6 +1,6 @@
-﻿namespace BlogAPI.Models
+﻿namespace Service.Models
 {
-    public class Post
+    public class DTOPost
     {
         public long Id { get; set; }
         public string? Title { get; set; }

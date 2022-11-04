@@ -528,3 +528,10 @@ D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\refint\BlogAPI.dll
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\BlogAPI.pdb
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\BlogAPI.genruntimeconfig.cache
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\ref\BlogAPI.dll
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\Blog.postman_collection.json
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\Domain.dll
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\Service.dll
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\Domain.pdb
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\Service.pdb
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\Github\Practices\API\BlogAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

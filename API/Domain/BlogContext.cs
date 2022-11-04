@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BlogAPI.Models
+namespace Domain
 {
     public class BlogContext : DbContext
     {
@@ -10,5 +10,12 @@ namespace BlogAPI.Models
         }
 
         public DbSet<Post> Posts { get; set; } = null!;
+    }
+    public class Post
+    {
+        public Int32 Id { get; set; }
+        public string? Title { get; set; }
+        public string? Text { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }
