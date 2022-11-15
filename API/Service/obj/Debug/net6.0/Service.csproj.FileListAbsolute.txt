@@ -1,8 +1,10 @@
 D:\Github\Practices\API\Service\bin\Debug\net6.0\Service.deps.json
 D:\Github\Practices\API\Service\bin\Debug\net6.0\Service.dll
 D:\Github\Practices\API\Service\bin\Debug\net6.0\Service.pdb
-D:\Github\Practices\API\Service\bin\Debug\net6.0\Domain.dll
-D:\Github\Practices\API\Service\bin\Debug\net6.0\Domain.pdb
+D:\Github\Practices\API\Service\bin\Debug\net6.0\Data.dll
+D:\Github\Practices\API\Service\bin\Debug\net6.0\Infrastructure.dll
+D:\Github\Practices\API\Service\bin\Debug\net6.0\Infrastructure.pdb
+D:\Github\Practices\API\Service\bin\Debug\net6.0\Data.pdb
 D:\Github\Practices\API\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
 D:\Github\Practices\API\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
 D:\Github\Practices\API\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache

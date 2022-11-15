@@ -25,7 +25,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"title\": \"First Blog Post\",\r\n  \"text\": \"Complete text of first blog post\",\r\n  \"createdDate\": \"2022-10-28T11:53:57.915Z\"\r\n}",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"First Blog Post\",\r\n  \"text\": \"Complete text of first blog post\",\r\n  \"createdDate\": \"2022-10-28T11:53:57.915Z\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,7 +65,7 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"method": "PATCH",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -84,7 +84,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44342/api/Post/1",
+							"raw": "https://localhost:44342/api/Post",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -92,8 +92,7 @@
 							"port": "44342",
 							"path": [
 								"api",
-								"Post",
-								"1"
+								"Post"
 							],
 							"query": [
 								{
@@ -254,6 +253,58 @@
 								"Post",
 								"search",
 								"first"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"First Blog Post\",\r\n  \"text\": \"Complete text of first blog post\",\r\n  \"createdDate\": \"2022-10-28T11:53:57.915Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44342/api/Post/5002",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44342",
+							"path": [
+								"api",
+								"Post",
+								"5002"
 							],
 							"query": [
 								{

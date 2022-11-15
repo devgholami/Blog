@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain;
+using Domain.Data.DBContext;
 using Service.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Service.Mapper
         public PostMapper()
         {
             //source mapping to destination
-            CreateMap<Post, DTOPost>().ForMember(des => des.Id, opt => opt.MapFrom(src => src.Id));
+            CreateMap<Post, PostItem>().ForMember(des => des.Id, opt => opt.MapFrom(src => src.Id)).ReverseMap();
         }
     }
 }

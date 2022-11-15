@@ -1,6 +1,10 @@
-using Domain;
+using BlogAPI;
+using Domain.Data.DBContext;
+using Domain.Infrastructure;
+using Domain.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Service;
+using StackExchange.Redis;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,14 +19,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICache, CacheRedis>();
+
+var multiplexer = ConnectionMultiplexer.Connect(configuration.GetConnectionString("redis"));
+builder.Services.AddSingleton<IConnectionMultiplexer>(multiplexer);
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "MyOrigin",
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost:9000",
-                                              "http://localhost:9001");
+                          builder.AllowAnyOrigin();
                       });
 });
 

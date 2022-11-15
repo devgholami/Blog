@@ -4,19 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Service
 {
-    public partial interface IPostService
+    public partial interface IPostService:IDisposable
     {
 
-        Task<IList<DTOPost>> GetBlogPostAll();
+        Task<DTOPostList> GetBlogPostAll();
 
         Task<DTOPost> GetBlogPost(int id);
 
-        Task<IList<DTOPost>> Search(string term);
+        Task<DTOPostList> Search(string term);
 
-        Task<int> PutBlogPost(DTOPost BlogPost);
+        Task<DTOResult> PutBlogPost(PostItem BlogPost);
 
-        Task<DTOPost> PostBlogPost(DTOPost dto);
+        Task<DTOPost> PostBlogPost(PostItem dto);
 
-        Task<int> DeleteBlogPost(int id);
+        Task<DTOResult> DeleteBlogPost(int id);
     }
 }
