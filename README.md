@@ -1,2 +1,2 @@
-# Practices
-All Practicing projects are here
+# Blog
+Blog API and UI
