@@ -1,59 +1,30 @@
-import { Fragment } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import PostComponent from "../../../Components/PostComponent";
+import { APP_CONTEXT } from "../../../Context/AppContext";
+import HttpResp from "../../../Models/HttpResponseModel";
+import PostModel from "../../../Models/PostModel";
 import "./Post.css";
+
 function Post() {
+  const postService = useContext(APP_CONTEXT).post;
+  let { postId } = useParams();
+  const [Post, setPost] = useState(new PostModel(0, "", "", new Date()));
+
+  useEffect(() => {
+    async function fetchpost() {
+      //return postId != null ? await postService.get(Number(postId)) :postService.getLatest();
+      return await postService.get(Number(postId));
+    }
+    fetchpost().then((value) => {
+      setPost(value.item);
+    });
+  }, []);
+
   return (
-    <Fragment>
-      <h2>
-        Learn To Enjoy,
-        <br />
-        Every Moment Of Your Life
-      </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <img src="/me.png"/>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere
-        in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.
-      </p>
-    </Fragment>
+    <div className="text-content">
+      <PostComponent Post={Post} />
+    </div>
   );
 }
 export default Post;
