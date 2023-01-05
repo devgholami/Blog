@@ -2,4 +2,29 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/API/BlogAPI/.vs/BlogAPI/DesignTimeBuild/.dtbcache.v2
+/API/BlogAPI/.vs/
+/API/BlogAPI/[Dd]ebug/
+/API/BlogAPI/[Rr]elease/
+/API/BlogAPI/x64/
+/API/BlogAPI/[Bb]in/
+/API/BlogAPI/[Oo]bj/
+
+/API/Domain/[Dd]ebug/
+/API/Domain/[Rr]elease/
+/API/Domain/x64/
+/API/Domain/[Bb]in/
+/API/Domain/[Oo]bj/
+
+/API/Domain.Infrastructure/[Dd]ebug/
+/API/Domain.Infrastructure/[Rr]elease/
+/API/Domain.Infrastructure/x64/
+/API/Domain.Infrastructure/[Bb]in/
+/API/Domain.Infrastructure/[Oo]bj/
+
+/API/Service/[Dd]ebug/
+/API/Service/[Rr]elease/
+/API/Service/x64/
+/API/Service/[Bb]in/
+/API/Service/[Oo]bj/
+
+/Vue/

@@ -560,3 +560,8 @@ D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\refint\BlogAPI.dll
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\BlogAPI.pdb
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\BlogAPI.genruntimeconfig.cache
 D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\ref\BlogAPI.dll
+D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\staticwebassets\msbuild.BlogAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.BlogAPI.props
+D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlogAPI.props
+D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlogAPI.props
+D:\Github\Practices\API\BlogAPI\obj\Debug\net6.0\staticwebassets.pack.json
