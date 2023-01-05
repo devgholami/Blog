@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/API/BlogAPI/.vs/BlogAPI/DesignTimeBuild/.dtbcache.v2
