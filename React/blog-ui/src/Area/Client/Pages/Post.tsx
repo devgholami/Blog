@@ -4,7 +4,7 @@ import PostComponent from "../../../Components/PostComponent";
 import { APP_CONTEXT } from "../../../Context/AppContext";
 import HttpResp from "../../../Models/HttpResponseModel";
 import PostModel from "../../../Models/PostModel";
-import "./Post.css";
+import styles from "./Post.module.css";
 
 function Post() {
   const postService = useContext(APP_CONTEXT).post;
@@ -22,7 +22,7 @@ function Post() {
   }, []);
 
   return (
-    <div className="text-content">
+    <div className={styles.wrapper}>
       <PostComponent Post={Post} />
     </div>
   );

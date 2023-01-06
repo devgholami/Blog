@@ -1,16 +1,16 @@
-import {Outlet} from "react-router-dom";
-import "./Layout.css";
+import {Link, Outlet} from "react-router-dom";
+import styles from "./Layout.module.css";
 export default function Root() {
     return (
-        <div className="App">
+        <div className={styles.App}>
         <header>
-          <nav className="navbar">
-            <div className="logo">
+          <nav className={styles.navbar}>
+            <div className={styles.logo}>
               <a href="#">AdminPage</a>
             </div>
-            <ul className="menu">
+            <ul className={styles.menu}>
               <li>
-                <a href="#">Home</a>
+                <Link to={"/admin"}>Home</Link>
               </li>
               <li>
                 <a href="#">Latest</a>
@@ -25,15 +25,11 @@ export default function Root() {
                 <a href="#">Contact</a>
               </li>
             </ul>
-            <div className="buttons">
+            <div className={styles.buttons}>
               <input type="button" value="Logout" />
             </div>
           </nav>
           <Outlet/>
-          <div className="play-button">
-            <span className="play">Write new post</span>
-            <i className="fas fa-play"></i>
-          </div>
         </header>
       </div>
     );

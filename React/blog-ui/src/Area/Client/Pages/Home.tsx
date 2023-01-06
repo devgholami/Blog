@@ -4,7 +4,7 @@ import { APP_CONTEXT } from "../../../Context/AppContext";
 import { statusCode } from "../../../Models/HttpResponseStatusEnum";
 import PostModel from "../../../Models/PostModel";
 import IPostService from "../../../Services/Interfaces/IPostService.interface";
-import "./home.css";
+import styles from "./home.module.css";
 
 function Home() {
   const postService: IPostService = useContext(APP_CONTEXT).post;
@@ -15,11 +15,10 @@ function Home() {
     }
     fetchpost().then((value) => {
       if (value.statusCode === statusCode.Success) setPost(value.item);
-      console.log(Post);
     });
   }, []);
   return (
-    <div className="text-content">
+    <div className={styles.wrapper}>
       <PostComponent Post={Post} />
     </div>
   );

@@ -1,0 +1,59 @@
+header .wrapper {
+  width: 50%;
+  margin: 0 50px;
+  overflow: auto;
+  max-height: 75%;
+  padding-right: 7px;
+}
+
+header .wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+header .wrapper:hover::-webkit-scrollbar-track,
+header .wrapper:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(0 0 0 / 15%);
+}
+header .wrapper::-webkit-scrollbar-track,
+header .wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(0 0 0 / 5%);
+  border-radius: 12px;
+}
+
+.wrapper h2 {
+  font-size: 27px;
+  font-weight: 600;
+}
+.wrapper p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+@media (max-width: 850px) {
+  header .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 5px;
+  }
+  .navbar .menu {
+    margin: 10px 0 20px 0;
+  }
+  header .text-content {
+    margin: 30px 0 0 20px;
+    width: 70%;
+  }
+  header .text-content h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 410px) {
+  header {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0px;
+  }
+  header .navbar {
+    padding: 15px 10px;
+  }
+}
