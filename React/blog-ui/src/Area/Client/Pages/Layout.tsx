@@ -17,7 +17,7 @@ export default function Root() {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/post"}>Latest</Link>
+                <Link to={"/post/1"}>Latest</Link>
               </li>
               <li>
                 <Link to={"/admin"}>Admin</Link>

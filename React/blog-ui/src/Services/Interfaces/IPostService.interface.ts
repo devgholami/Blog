@@ -5,6 +5,6 @@ export default interface IPostService{
     getAll(): PostModel[];
     get(id:number):Promise<HttpResp<PostModel>>;
     getLatest():PostModel;
-    post(item:PostModel):number;
+    post(item:PostModel):Promise<HttpResp<Number>>;
     delete(id:number):number;
 }

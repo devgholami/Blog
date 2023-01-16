@@ -3,10 +3,12 @@ import PostModel from "../../Models/PostModel";
 import Input from "../Input";
 import Editor from "../Editor";
 import styles from "./PostForm.module.css";
+import { useEffect } from "react";
 
 export default function PostForm(props: {
   init: PostModel;
   onChange: Function;
+  onSubmit:Function;
 }) {
   const formik = useFormik({
     initialValues: props.init,
@@ -17,13 +19,16 @@ export default function PostForm(props: {
       return errors;
     },
     onSubmit: (values, { setSubmitting }) => {
-      setTimeout(() => {
+      //setTimeout(() => {
+        setSubmitting(true);
         values.createdDate = new Date();
-        alert(JSON.stringify(values, null, 2));
+        //alert(JSON.stringify(values, null, 2));
+        props.onSubmit(values);
         setSubmitting(false);
-      }, 400);
-    },
-  });
+        //}, 400);
+      },
+    });
+
   return (
     <form onSubmit={formik.handleSubmit}>
       <Input
@@ -47,13 +52,13 @@ export default function PostForm(props: {
         label="Text:"
         input={{ id: "text", name: "text", value: formik.values.text }}
         events={{
-          onChange: (e: Event) => {
+          onChange: (e: any) => {
             props.onChange(e);
-            //formik.handleChange(e);
+            formik.setFieldValue("text", e.target.value);
           },
           onClick: null,
         }}
-        error={formik.errors.title}
+        error={formik.errors.text}
       />
       <button type="submit" disabled={formik.isSubmitting}>
         Submit

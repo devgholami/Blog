@@ -1,3 +1,4 @@
 export default interface IHttp {
-    get<T>(url: string): Promise<T>;
+    Get<T>(url: string): Promise<T>;
+    Post<T>(url:string,data:object):Promise<T>;
 }

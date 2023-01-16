@@ -1,6 +1,7 @@
 .wrapper{
     padding: 0 50px;
     width: 50%;
-    height: 100%;
+    height: calc(100% - 115px);
+    overflow: auto;
     float: left;
 }

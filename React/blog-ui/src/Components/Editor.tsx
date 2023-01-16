@@ -14,11 +14,11 @@ export default function Input(props: inputProps) {
         {props.label}
       </label>
       <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/js/tinymce/tinymce.min.js'}
-      initialValue={props.input.value}
+      value={props.input.value}
 
       id={props.input.id}
       textareaName={props.input.name}
-      onEditorChange={(e) => {console.log(e); props.events.onChange?.({ target: { name: props.input.name, value: e } })}}
+      onEditorChange={(e) => { props.events.onChange?.({ target: { name: props.input.name, value: e } })}}
       init={{
         height: 500,
         menubar: false,

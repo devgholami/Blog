@@ -1,4 +1,4 @@
-import {Link, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet} from "react-router-dom";
 import styles from "./Layout.module.css";
 export default function Root() {
     return (
@@ -26,7 +26,9 @@ export default function Root() {
               </li>
             </ul>
             <div className={styles.buttons}>
+            <NavLink to="/">
               <input type="button" value="Logout" />
+            </NavLink>
             </div>
           </nav>
           <Outlet/>

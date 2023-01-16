@@ -1,25 +1,9 @@
 header .wrapper {
-  width: 50%;
   margin: 0 50px;
-  overflow: auto;
   max-height: 75%;
+  overflow: auto;
   padding-right: 7px;
 }
-
-header .wrapper::-webkit-scrollbar {
-  width: 8px;
-}
-
-header .wrapper:hover::-webkit-scrollbar-track,
-header .wrapper:hover::-webkit-scrollbar-thumb {
-  background-color: rgb(0 0 0 / 15%);
-}
-header .wrapper::-webkit-scrollbar-track,
-header .wrapper::-webkit-scrollbar-thumb {
-  background-color: rgb(0 0 0 / 5%);
-  border-radius: 12px;
-}
-
 .wrapper h2 {
   font-size: 27px;
   font-weight: 600;
@@ -27,6 +11,16 @@ header .wrapper::-webkit-scrollbar-thumb {
 .wrapper p {
   font-size: 15px;
   margin-top: 10px;
+}
+.wrapper .leftSide{
+  width: 50%;
+  float: left;
+  max-height: 75%;
+  overflow: auto;
+}
+.wrapper .rightSide{
+  width: 50%;
+  float: right;
 }
 
 @media (max-width: 850px) {
