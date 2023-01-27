@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostComponent from "../../../Components/PostComponent";
+import TableOfContents from "../../../Components/TableOfContents";
 import { APP_CONTEXT } from "../../../Context/AppContext";
 import HttpResp from "../../../Models/HttpResponseModel";
 import PostModel from "../../../Models/PostModel";
@@ -10,6 +11,7 @@ function Post() {
   const postService = useContext(APP_CONTEXT).post;
   let { postId } = useParams();
   const [Post, setPost] = useState(new PostModel(0, "", "", new Date()));
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     async function fetchpost() {
@@ -18,12 +20,14 @@ function Post() {
     }
     fetchpost().then((value) => {
       setPost(value.item);
+      setLoaded(true);
     });
   }, []);
 
   return (
     <div className={styles.wrapper}>
       <PostComponent Post={Post} />
+      <TableOfContents root={"." + styles.wrapper} loaded={loaded}/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 header .wrapper {
   margin: 0 50px;
-  max-height: 75%;
-  overflow: auto;
+  max-height: 85%;
+  overflow: hidden;
   padding-right: 7px;
 }
 .wrapper h2 {
@@ -15,7 +15,7 @@ header .wrapper {
 .wrapper .leftSide{
   width: 50%;
   float: left;
-  max-height: 75%;
+  height: calc(70vh);
   overflow: auto;
 }
 .wrapper .rightSide{

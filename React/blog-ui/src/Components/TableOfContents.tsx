@@ -1,14 +1,18 @@
+import "./TableOfContent.css";
+import useHeadingsData from "../Hooks/useHeadingsData";
+import Headings from "./Heading";
+import useHeadsObserver from "../Hooks/useHeadsObserver";
 import PostModel from "../Models/PostModel";
 
-export default function TableOfContents(props:{post:PostModel}){
-    const titles = [{id:1,parent:0,text:props.post.title}];
-    var list = props.post.text.match(/<h[1-6].*?>(.*?)<\/h[1-6]>/g);
-    list?.forEach((item,index,arr) => {
-        titles.push({id:index+2,parent:0,text:item.replace(/<h[1-6]>|<\/h[1-6]>/g,"")});
-    });
-    return <ul>
-        {titles.map((item)=>{
-            return <li key={item.id}>{item.text}</li>
-        })}
-    </ul>
+export default function TableOfContents(props:{root:string,loaded:boolean}) {
+    const { HeadingsData } = useHeadingsData(props.root,props.loaded);
+    
+    const {activeId} = useHeadsObserver(props.loaded); 
+  
+    return (
+      <nav aria-label="Table of contents">
+        <strong>Table of contents</strong>
+        <Headings headings={HeadingsData} activeId={activeId} />
+      </nav>
+    );
 }

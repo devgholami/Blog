@@ -10,12 +10,13 @@ import styles from "./home.module.css";
 function Home() {
   const postService: IPostService = useContext(APP_CONTEXT).post;
   const [Post, setPost] = useState(new PostModel(0, "", "", new Date()));
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     async function fetchpost() {
-      return await postService.get(36);
+      return await postService.get(41);
     }
     fetchpost().then((value) => {
-      if (value.statusCode === statusCode.Success) setPost(value.item);
+      if (value.statusCode === statusCode.Success) {setPost(value.item); setLoaded(true);}
     });
   }, []);
   return (
@@ -25,7 +26,7 @@ function Home() {
       <PostComponent Post={Post} />
       </div>
       <div className={styles.rightSide}>
-      <TableOfContents post={Post}/>
+      <TableOfContents root={`.${styles.leftSide}`} loaded={loaded}/>
       </div>
     </div>
     </>
