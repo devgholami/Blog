@@ -14,7 +14,7 @@ export default function Headings(props: { headings: TableOfContent[],activeId:st
               });
             }}
             style={{
-              fontWeight: props.activeId === heading.id ? "bold" : "normal",
+              color: props.activeId === heading.id ? "var(--lgreen)" : "",
             }}
           >
             {heading.title}

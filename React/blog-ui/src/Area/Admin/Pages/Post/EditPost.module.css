@@ -1,7 +1,10 @@
-.wrapper{
+.wrapperLeft,
+.wrapperRight{
     padding: 0 50px;
     width: 50%;
-    height: calc(100% - 115px);
     overflow: auto;
+    float: right;
+}
+.wrapperLeft{
     float: left;
 }

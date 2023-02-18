@@ -10,7 +10,7 @@ export default function TableOfContents(props:{root:string,loaded:boolean}) {
     const {activeId} = useHeadsObserver(props.loaded); 
   
     return (
-      <nav aria-label="Table of contents">
+      <nav aria-label="Table of contents" className="toc">
         <strong>Table of contents</strong>
         <Headings headings={HeadingsData} activeId={activeId} />
       </nav>

@@ -6,7 +6,7 @@ export default function Error() {
 
   return (
     <div className={styles.App}>
-      <header>
+      <header className={styles.header}>
         <div className={styles.wrapper}>
           <h1>Oops!</h1>
           <p>Sorry, an unexpected error has occurred.</p>

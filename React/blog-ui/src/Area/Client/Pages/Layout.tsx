@@ -7,7 +7,7 @@ export default function Root() {
   return (
     <APP_CONTEXT.Provider value={appDependencies}>
       <div className={styles.App}>
-        <header>
+        <header className={styles.header}>
           <nav className={styles.navbar}>
             <div className={styles.logo}>
               <Link to={"/"}>Blog Name</Link>
@@ -22,24 +22,17 @@ export default function Root() {
               <li>
                 <Link to={"/admin"}>Admin</Link>
               </li>
-              <li>
-                <Link to={"/"}>Services</Link>
-              </li>
-              <li>
-                <Link to={"/"}>Contact</Link>
-              </li>
             </ul>
             <div className={styles.buttons}>
-              <input type="button" value="Login" />
+            <i className="fa fa-login"></i>
+              <input type="button" value="Login"></input>
               <input type="button" value="Register" />
             </div>
           </nav>
-          <Outlet />
-          <div className={styles["play-button"]}>
-            <span className={styles.play}>Write new post</span>
-            <i className="fas fa-play"></i>
-          </div>
         </header>
+        <main className={styles.main}>
+          <Outlet />
+        </main>
       </div>
     </APP_CONTEXT.Provider>
   );

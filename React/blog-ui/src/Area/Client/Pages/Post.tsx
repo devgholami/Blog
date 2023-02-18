@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import PostComponent from "../../../Components/PostComponent";
 import TableOfContents from "../../../Components/TableOfContents";
 import { APP_CONTEXT } from "../../../Context/AppContext";
-import HttpResp from "../../../Models/HttpResponseModel";
 import PostModel from "../../../Models/PostModel";
 import styles from "./Post.module.css";
 

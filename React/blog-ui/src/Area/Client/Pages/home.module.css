@@ -1,26 +1,22 @@
 header .wrapper {
-  margin: 0 50px;
-  max-height: 85%;
-  overflow: hidden;
   padding-right: 7px;
 }
 .wrapper h2 {
   font-size: 27px;
   font-weight: 600;
+  margin: 15px 0;
 }
 .wrapper p {
   font-size: 15px;
   margin-top: 10px;
 }
 .wrapper .leftSide{
-  width: 50%;
+  width: 75%;
   float: left;
-  height: calc(70vh);
-  overflow: auto;
 }
 .wrapper .rightSide{
-  width: 50%;
-  float: right;
+  position: fixed;
+  left: 75%;
 }
 
 @media (max-width: 850px) {
@@ -41,8 +37,16 @@ header .wrapper {
     font-size: 20px;
   }
 }
+@media (max-width: 768px) {
+  .wrapper .leftSide{
+    width: 100%;
+  }
+  .wrapper .rightSide{
+    display: none;
+  }
+}
 @media (max-width: 410px) {
-  header {
+  .header {
     height: 100vh;
     width: 100%;
     border-radius: 0px;

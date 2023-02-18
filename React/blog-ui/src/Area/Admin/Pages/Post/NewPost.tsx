@@ -29,10 +29,10 @@ export default function NewPostPage() {
   }
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapperRight}>
         <PostComponent Post={NewPost}></PostComponent>
       </div>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapperLeft}>
         <PostForm init={NewPost} onChange={ChangeCallBack} onSubmit={SubmitFormHandler}></PostForm>
       </div>
     </>

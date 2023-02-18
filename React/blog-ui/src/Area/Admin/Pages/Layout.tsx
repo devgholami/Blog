@@ -3,7 +3,7 @@ import styles from "./Layout.module.css";
 export default function Root() {
     return (
         <div className={styles.App}>
-        <header>
+        <header className={styles.header}>
           <nav className={styles.navbar}>
             <div className={styles.logo}>
               <a href="#">AdminPage</a>
@@ -13,16 +13,7 @@ export default function Root() {
                 <Link to={"/admin"}>Home</Link>
               </li>
               <li>
-                <a href="#">Latest</a>
-              </li>
-              <li>
-                <a href="#">Offers</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
+                <a href="/admin/post/new">Posts</a>
               </li>
             </ul>
             <div className={styles.buttons}>
@@ -31,8 +22,10 @@ export default function Root() {
             </NavLink>
             </div>
           </nav>
-          <Outlet/>
         </header>
+        <main className={styles.main}>
+          <Outlet/>
+        </main>
       </div>
     );
   }

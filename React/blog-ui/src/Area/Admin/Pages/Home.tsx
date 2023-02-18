@@ -8,11 +8,6 @@ function Home() {
       <div className={styles.wrapper}>
         <p>This is Admin Home Page.</p>
       </div>
-
-      <Link to={"/admin/post/new"} className={styles["play-button"]}>
-        <span className={styles.play}>Write new post</span>
-        <i className="fas fa-play"></i>
-      </Link>
     </>
   );
 }
