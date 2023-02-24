@@ -13,7 +13,7 @@ export default function Root() {
                 <Link to={"/admin"}>Home</Link>
               </li>
               <li>
-                <a href="/admin/post/new">Posts</a>
+                <a href="/admin/post">Posts</a>
               </li>
             </ul>
             <div className={styles.buttons}>

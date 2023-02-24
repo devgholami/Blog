@@ -12,11 +12,12 @@ namespace Domain.Infrastructure
         {
             this._context = context;
         }
-        public async Task<IEnumerable<Post>> GetAll()
+        public async Task<IList<Post>> GetAll(int pageIndex, int pageSize)
         {
-            return await _context.Posts.ToListAsync();
+            var position = (pageIndex-1) * pageSize;
+            return await _context.Posts.OrderBy(x=>x.Id).Skip(position).Take(pageSize).ToListAsync();
         }
-        public async Task<IEnumerable<Post>> Search(string term)
+        public async Task<IList<Post>> Search(string term)
         {
             return await _context.Posts.Where(e => e.Title.Contains(term) || e.Text.Contains(term)).ToListAsync();
         }
@@ -35,7 +36,10 @@ namespace Domain.Infrastructure
         public async Task Remove(Post item) {
             _context.Posts.Remove(item);
         }
-
+        public async Task<int> Count()
+        {
+            return _context.Posts.Count();
+        }
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)

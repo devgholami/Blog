@@ -7,7 +7,7 @@ namespace Service
     public partial interface IPostService:IDisposable
     {
 
-        Task<DTOPostList> GetBlogPostAll();
+        Task<DTOPostList> GetBlogPostAll(int pageIndex, int pageSize);
 
         Task<DTOPost> GetBlogPost(int id);
 

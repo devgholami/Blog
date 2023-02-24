@@ -15,6 +15,7 @@ namespace Service.Mapper
         {
             //source mapping to destination
             CreateMap<Post, PostItem>().ForMember(des => des.Id, opt => opt.MapFrom(src => src.Id)).ReverseMap();
+            CreateMap<Post, PostTitle>().ForMember(des => des.Id, opt => opt.MapFrom(src => src.Id)).ReverseMap();
         }
     }
 }

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export default class Http implements IHttp {
     private _axios = axios.create({
         baseURL: config.ApiBaseUrl,
-        timeout:2000,
+        timeout:8000,
         headers:{
             "Content-Type": "application/json"
         }

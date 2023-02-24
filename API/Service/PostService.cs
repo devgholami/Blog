@@ -17,16 +17,18 @@ namespace Service
             _mapper = mapper;
         }
 
-        public async Task<DTOPostList> GetBlogPostAll()
+        public async Task<DTOPostList> GetBlogPostAll(int pageIndex, int pageSize)
         {
             try
             {
-                var list = await _unitOfWork.PostRepository.GetAll();
-                List<PostItem> dto = _mapper.Map<List<PostItem>>(list);
+                var list = await _unitOfWork.PostRepository.GetAll(pageIndex, pageSize);
+                var count = await _unitOfWork.PostRepository.Count();
+                List<PostTitle> dto = _mapper.Map<List<PostTitle>>(list);
+                var res = new PostListResult() { Data = dto, TotalCount = count };
                 if (dto.Count > 0)
-                    return new DTOPostList() { Items = dto , statusCode = HttpStatusCode.OK, Message = "Successful" };
+                    return new DTOPostList() { Items = res, statusCode = HttpStatusCode.OK, Message = "Successful" };
                 else
-                    return new DTOPostList() { Items = dto, statusCode = HttpStatusCode.NoContent, Message = "NoContent" };
+                    return new DTOPostList() { Items = res, statusCode = HttpStatusCode.NoContent, Message = "NoContent" };
             }
             catch (Exception e)
             {
@@ -63,8 +65,9 @@ namespace Service
             try
             {
                 DTOPostList resp = new DTOPostList() { statusCode = HttpStatusCode.OK , Message = "Successful" };
-                resp.Items = _mapper.Map<List<PostItem>>(await _unitOfWork.PostRepository.Search(term));
-                if(resp.Items.Count == 0)
+                resp.Items.Data= _mapper.Map<List<PostTitle>>(await _unitOfWork.PostRepository.Search(term));
+                resp.Items.TotalCount = resp.Items.Data.Count;
+                if (resp.Items.TotalCount == 0)
                 {
                     resp.statusCode = HttpStatusCode.NoContent;
                     resp.Message = "Content Not Found";

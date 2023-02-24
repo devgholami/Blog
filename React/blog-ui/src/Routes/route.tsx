@@ -8,6 +8,11 @@ import Post from "../Area/Client/Pages/Post";
 import ManagePostsPage from "../Area/Admin/Pages/Post/ManagePosts";
 import UpdatePostPage from "../Area/Admin/Pages/Post/UpdatePost";
 import NewPostPage from "../Area/Admin/Pages/Post/NewPost";
+import { APP_CONTEXT } from "../Context/AppContext";
+import { useContext } from "react";
+import PostService from "../Services/PostService";
+import Http from "../Services/Http";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,9 +42,16 @@ const router = createBrowserRouter([
         path: "/admin/post",
         element: <ManagePostsPage />,
       },
-      { path: "/admin/post/:postId", element: <UpdatePostPage /> },
+      { path: "/admin/post/:postId",
+       element: <UpdatePostPage />,
+       loader:UpdatePostLoader
+    },
       { path: "/admin/post/new", element: <NewPostPage /> },
     ],
   },
 ]);
+function UpdatePostLoader({params}:any) {
+  const _post = new PostService(new Http());
+  return _post.get(params.postId).then(q=>q.item);
+}
 export default router;

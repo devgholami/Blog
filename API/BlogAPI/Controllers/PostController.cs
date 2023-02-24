@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Service;
 using Service.Models;
 
@@ -25,16 +26,16 @@ namespace BlogAPI.Controllers
         }
 
         // GET: api/Post
-        [HttpGet("all")]
-        public async Task<DTOPostList> GetBlogPostAll()
+        [HttpGet("all/{pageIndex}/{pageSize}")]
+        public async Task<DTOPostList> GetBlogPostAll(int pageIndex,int pageSize)
         {
             try
             {
-                List<PostItem> cache = await _cache.Get<List<PostItem>>("allpost");
+                PostListResult cache = await _cache.Get<PostListResult>("allpost_P"+pageIndex);
                 if (cache != null)
                     return new DTOPostList() { Items = cache, statusCode = HttpStatusCode.OK, Message = "seccessful" };
-                var res = await _post.GetBlogPostAll();
-                await _cache.Set("allpost", res.Items);
+                var res = await _post.GetBlogPostAll(pageIndex, pageSize);
+                await _cache.Set("allpost_P"+pageIndex, res.Items);
                 return res;
             }
             catch (Exception e)
