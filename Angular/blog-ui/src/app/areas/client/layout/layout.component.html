@@ -1,0 +1,28 @@
+<div class="app">
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a routerLink="/">Blog Name</a>
+      </div>
+      <ul class="menu">
+        <li>
+          <a routerLink="/">Home</a>
+        </li>
+        <li>
+          <a routerLink="/post/1">Latest</a>
+        </li>
+        <li>
+          <a routerLink="/admin">Admin</a>
+        </li>
+      </ul>
+      <div class="buttons">
+      <i className="fa fa-login"></i>
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

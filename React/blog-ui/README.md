@@ -7,4 +7,4 @@ These base weblog features have been implemented with [Create React App](https:/
 
 What I accomplished here is creating a standard, effective, and clean structure to use react. To achieve this goal, I used context API to handle the DI principle and added a service layer to decouple business from the implementation of the user interface.
 
-Of course, all features that I want to implement are very furthermore. But I'm busy with the Angular version of this weblog. You can follow it [here]()
+Of course, all features that I want to implement are very furthermore. But I'm busy with the Angular version of this weblog. You can follow it [here](https://github.com/devgholami/Blog/tree/main/Angular/blog-ui)
